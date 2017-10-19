@@ -1,3 +1,3 @@
 export default (() => {
-	return navigator.serviceWorker || false;
+	return !!navigator.serviceWorker || false;
 })();

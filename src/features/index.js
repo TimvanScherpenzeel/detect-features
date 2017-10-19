@@ -1,35 +1,47 @@
-// Device
+/*
+	Already covered by Google Analytics
+	- Platform (deviced by device, OS, browser, etc..)
+	- Device (desktop, tablet, phone)
+	- Inbound links
+	- Total time spend on site
+*/
+
 import getDevicePixelRatio from './getDevicePixelRatio';
+import getEndian from './getEndian';
+import getWebGL2Features from './getWebGL2Features';
+import getWebGLFeatures from './getWebGLFeatures';
+import getWebWorkerPoolSize from './getWebWorkerPoolSize';
 
-// RequestIdleCallback
+// Support
+import isGamepadSupported from './isGamepadSupported';
 import isRequestIdleCallbackSupported from './isRequestIdleCallbackSupported';
-
-// WebGL
+import isServiceWorkerSupported from './isServiceWorkerSupported';
+import isWebAssemblySupported from './isWebAssemblySupported';
+import isWebAudioSupported from './isWebAudioSupported';
 import isWebGL2Supported from './isWebGL2Supported';
 import isWebGLSupported from './isWebGLSupported';
+import isWebSocketSupported from './isWebSocketSupported';
+import isWebRTCSupported from './isWebRTCSupported';
+import isWebVRDeviceAvailable from './isWebVRDeviceAvailable';
+import isWebWorkerSupported from './isWebWorkerSupported';
 
-// Service worker
-import isServiceWorkerSupported from './isServiceWorkerSupported';
-
-// Workers
-import isWorkerSupported from './isWebWorkerSupported';
-import getWorkerPoolSize from './getWebWorkerPoolSize';
-
+// Features
 export const features = {
-	// Device
 	devicePixelRatio: getDevicePixelRatio,
+	endian: getEndian,
+	workerPoolSize: getWebWorkerPoolSize,
+	webGL2Features: getWebGL2Features,
+	webGLFeatures: getWebGLFeatures,
 
-	// RequestIdleCallback
+	isGamepadSupported,
 	isRequestIdleCallbackSupported,
-
-	// WebGL
-	isWebGLSupported,
-	isWebGL2Supported,
-
-	// Service worker
 	isServiceWorkerSupported,
-
-	// Workers
-	isWorkerSupported,
-	workerPoolSize: getWorkerPoolSize,
+	isWebAssemblySupported,
+	isWebAudioSupported,
+	isWebGL2Supported,
+	isWebGLSupported,
+	isWebRTCSupported,
+	isWebSocketSupported,
+	isWebVRDeviceAvailable,
+	isWebWorkerSupported,
 }
