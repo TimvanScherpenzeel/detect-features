@@ -1,5 +1,4 @@
 export const record = (obj = {}) => {
-
 	const defaultEventObject = {
 		hitType: 'event',
 		eventCategory: 'Features',
@@ -8,7 +7,7 @@ export const record = (obj = {}) => {
 		nonInteraction: true,
 	};
 
-	const eventObject = {...defaultEventObject, ...obj};
+	const eventObject = { ...defaultEventObject, ...obj };
 
 	console.log(eventObject);
 

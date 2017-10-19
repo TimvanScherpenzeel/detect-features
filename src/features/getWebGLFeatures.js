@@ -2,7 +2,9 @@ export default (() => {
 	const canvas = document.createElement('canvas');
 	const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
+	/* eslint-disable no-undef */
 	if(!gl || !gl instanceof WebGLRenderingContext) return;
+	/* eslint-enable no-undef */
 
 	const glExtensionDebugRendererInfo = gl.getExtension('WEBGL_debug_renderer_info');
 

@@ -44,4 +44,4 @@ export const features = {
 	isWebSocketSupported,
 	isWebVRDeviceAvailable,
 	isWebWorkerSupported,
-}
+};
