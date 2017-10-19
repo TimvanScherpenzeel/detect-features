@@ -1,6 +1,7 @@
 // Analytics
 import { analytics } from './analytics';
 
+// Utilities
 import isValidUACode from './utilities/isValidUACode';
 
 export function initialize(trackingId) {
