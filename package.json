@@ -1,0 +1,23 @@
+{
+  "name": "feature-analytics",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/feature-analytics.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack -d --progress --watch --display-modules",
+    "lint": "eslint src/**/*.js",
+    "dist": "NODE_ENV=production webpack -p --progress --optimize-minimize --display-modules && NODE_ENV=development webpack -d --progress --display-modules",
+    "deploy": "npm run dist && npm version patch && npm publish && git push origin"
+  },
+  "author": "Tim van Scherpenzeel",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "webpack": "^3.8.1"
+  }
+}
