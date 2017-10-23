@@ -7,7 +7,8 @@
         <title>Feature Analytics</title>
         <script src="../dist/feature-analytics.js"></script>
         <script>
-            FeatureAnalytics.initialize('UA-54317375-2');
+            FeatureAnalytics.initialize('UA-54317375-2', true);
+            FeatureAnalytics.register(true);
             console.log(window.FEATURE_ANALYTICS.features);
         </script>
     </head>

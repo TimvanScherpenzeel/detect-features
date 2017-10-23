@@ -17,33 +17,37 @@ export const analytics = {
 		/* eslint-enable */
 	},
 
-	register: () => {
+	register: (verbose = false) => {
 		window.FEATURE_ANALYTICS = features;
 
 		// WebGL support detection
-		if (features.isWebGLSupported) {
-			record({
-				eventAction: 'WebGL Detect',
-				eventLabel: 'WebGL is supported',
-			});
-		} else {
-			record({
-				eventAction: 'WebGL Detect',
-				eventLabel: 'WebGL is not supported',
-			});
+		if (verbose) {
+			if (features.isWebGLSupported) {
+				record({
+					eventAction: 'WebGL Detect',
+					eventLabel: 'WebGL is supported',
+				});
+			} else {
+				record({
+					eventAction: 'WebGL Detect',
+					eventLabel: 'WebGL is not supported',
+				});
+			}
 		}
 
 		// WebGL2 support detection
-		if (features.isWebGL2Supported) {
-			record({
-				eventAction: 'WebGL2 Detect',
-				eventLabel: 'WebGL2 is supported',
-			});
-		} else {
-			record({
-				eventAction: 'WebGL2 Detect',
-				eventLabel: 'WebGL2 is not supported',
-			});
+		if (verbose) {
+			if (features.isWebGL2Supported) {
+				record({
+					eventAction: 'WebGL2 Detect',
+					eventLabel: 'WebGL2 is supported',
+				});
+			} else {
+				record({
+					eventAction: 'WebGL2 Detect',
+					eventLabel: 'WebGL2 is not supported',
+				});
+			}
 		}
 	},
 };

@@ -4,12 +4,11 @@ import { analytics } from './analytics';
 // Utilities
 import isValidUACode from './utilities/isValidUACode';
 
-export function initialize(trackingId) {
+export function register(trackingId, verbose = false) {
 	if (trackingId === undefined || !isValidUACode(trackingId)) {
 		console.error('Please provide a valid UA code (UA-xxxx-yy)');
 		return;
 	};
 
-	analytics.initialize(trackingId);
-	analytics.register();
+	analytics.register(trackingId, verbose);
 }
