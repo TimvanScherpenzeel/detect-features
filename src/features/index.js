@@ -1,9 +1,11 @@
-// Device features
+// Hardware features
 import getDevicePixelRatio from './getDevicePixelRatio';
-
-// Browser features
 import getEndian from './getEndian';
 import getWebWorkerPoolSize from './getWebWorkerPoolSize';
+
+// Browser settings
+import isCookieEnabled from './isCookieEnabled';
+import isDoNotTrackEnabled from './isDoNotTrackEnabled';
 
 // Browser support
 import isGamepadSupported from './isGamepadSupported';
@@ -25,12 +27,14 @@ import getWebGLFeatures from './getWebGLFeatures';
 // Features
 export const getFeatures = (verbose = false) => {
 	const features = {
-		// Device features
+		// Hardware features
 		devicePixelRatio: getDevicePixelRatio,
-
-		// Browser features
 		endian: getEndian,
 		workerPoolSize: getWebWorkerPoolSize,
+
+		// Browser settings
+		isCookieEnabled,
+		isDoNotTrackEnabled,
 
 		// Browser support
 		isGamepadSupported,
