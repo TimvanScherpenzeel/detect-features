@@ -16,12 +16,12 @@ import isWebAssemblySupported from './isWebAssemblySupported';
 import isWebAudioSupported from './isWebAudioSupported';
 import isWebGL2Supported from './isWebGL2Supported';
 import isWebGLSupported from './isWebGLSupported';
-import isWebSocketSupported from './isWebSocketSupported';
 import isWebRTCSupported from './isWebRTCSupported';
+import isWebSocketSupported from './isWebSocketSupported';
 import isWebVRSupported from './isWebVRSupported';
 import isWebWorkerSupported from './isWebWorkerSupported';
 
-// Verbose features
+// Browser features
 import getWebGL2Features from './getWebGL2Features';
 import getWebGLFeatures from './getWebGLFeatures';
 
@@ -30,7 +30,6 @@ export const getFeatures = (verbose = false) => {
 	const features = {
 		// Hardware features
 		devicePixelRatio: getDevicePixelRatio,
-		endian: getEndian,
 		workerPoolSize: getWebWorkerPoolSize,
 		isWebVRDeviceAvailable,
 
@@ -55,6 +54,10 @@ export const getFeatures = (verbose = false) => {
 	// Verbose features
 	if (verbose) {
 		return { ...features, ...{
+			// Hardware features
+			endian: getEndian,
+
+			// Browser features
 			webGL2Features: getWebGL2Features,
 			webGLFeatures: getWebGLFeatures,
 		}};
