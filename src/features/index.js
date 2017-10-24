@@ -27,6 +27,7 @@ import getWebGLFeatures from './getWebGLFeatures';
 
 // Features
 export const getFeatures = (verbose = false) => {
+	// Default features
 	const features = {
 		// Hardware features
 		devicePixelRatio: getDevicePixelRatio,
@@ -50,6 +51,7 @@ export const getFeatures = (verbose = false) => {
 		isWebWorkerSupported,
 	}
 
+	// WebVR specific features
 	if (isWebVRSupported) {
 		return { ...features, ...{
 			webVRDeviceType: getWebVRDeviceType,

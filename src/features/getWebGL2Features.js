@@ -3,7 +3,7 @@ export default (() => {
 	const gl = canvas.getContext('webgl2');
 
 	/* eslint-disable no-undef */
-	if(!gl || !gl instanceof WebGL2RenderingContext) return;
+	if(!gl || !gl instanceof WebGL2RenderingContext) return false;
 	/* eslint-enable no-undef */
 
 	const glExtensionDebugRendererInfo = gl.getExtension('WEBGL_debug_renderer_info');
