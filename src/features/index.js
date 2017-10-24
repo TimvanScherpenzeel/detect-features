@@ -8,7 +8,7 @@ import getWebVRDeviceType from './getWebVRDeviceType';
 import isCookieEnabled from './isCookieEnabled';
 import isDoNotTrackEnabled from './isDoNotTrackEnabled';
 
-// Browser support
+// Browser features
 import isGamepadSupported from './isGamepadSupported';
 import isRequestIdleCallbackSupported from './isRequestIdleCallbackSupported';
 import isServiceWorkerSupported from './isServiceWorkerSupported';
@@ -30,45 +30,54 @@ export const getFeatures = (verbose = false) => {
 	// Default features
 	const features = {
 		// Hardware features
-		devicePixelRatio: getDevicePixelRatio,
-		workerPoolSize: getWebWorkerPoolSize,
+		hardwareFeatures: {
+			devicePixelRatio: getDevicePixelRatio,
+			workerPoolSize: getWebWorkerPoolSize,
+		},
 
 		// Browser settings
-		isCookieEnabled,
-		isDoNotTrackEnabled,
+		browserSettings: {
+			isCookieEnabled,
+			isDoNotTrackEnabled,
+		},
 
-		// Browser support
-		isGamepadSupported,
-		isRequestIdleCallbackSupported,
-		isServiceWorkerSupported,
-		isWebAssemblySupported,
-		isWebAudioSupported,
-		isWebGL2Supported,
-		isWebGLSupported,
-		isWebRTCSupported,
-		isWebSocketSupported,
-		isWebVRSupported,
-		isWebWorkerSupported,
+		// Browser features
+		browserFeatures: {
+			isGamepadSupported,
+			isRequestIdleCallbackSupported,
+			isServiceWorkerSupported,
+			isWebAssemblySupported,
+			isWebAudioSupported,
+			isWebGL2Supported,
+			isWebGLSupported,
+			isWebRTCSupported,
+			isWebSocketSupported,
+			isWebVRSupported,
+			isWebWorkerSupported,
+		},
 	}
 
-	// WebVR specific features
+	// WebVR features
 	if (isWebVRSupported) {
-		return { ...features, ...{
+		return { ...features.hardwareFeatures, ...{
+			// Hardware features
 			webVRDeviceType: getWebVRDeviceType,
 		}};
 	}
 
 	// Verbose features
 	if (verbose) {
-		return { ...features, ...{
+		features.hardwareFeatures = { ...features.hardwareFeatures, ...{
 			// Hardware features
 			endianness: getEndianness,
+		}};
 
+		features.browserFeatures = { ...features.browserFeatures, ...{
 			// Browser features
 			webGL2Features: getWebGL2Features,
 			webGLFeatures: getWebGLFeatures,
 		}};
-	} else {
-		return features;
 	}
+	
+	return features;
 };

@@ -7,6 +7,7 @@ import { getFeatures } from '../features';
 export const analytics = {
 	initialize: (trackingId) => {
 		// Inject Google Analytics
+
 		/* eslint-disable */
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,36 +20,39 @@ export const analytics = {
 
 	register: (verbose = false) => {
 		const features = getFeatures(verbose);
+
 		console.log(features);
 
-		// WebGL support detection
-		if (verbose) {
-			if (features.isWebGLSupported) {
-				record({
-					eventAction: 'WebGL Detect',
-					eventLabel: 'WebGL is supported',
-				});
-			} else {
-				record({
-					eventAction: 'WebGL Detect',
-					eventLabel: 'WebGL is not supported',
-				});
-			}
-		}
+		// Object.keys(features).forEach((feature) => {
+		// 	console.log(feature, features[feature]);
+		// });
 
-		// WebGL2 support detection
-		if (verbose) {
-			if (features.isWebGL2Supported) {
-				record({
-					eventAction: 'WebGL2 Detect',
-					eventLabel: 'WebGL2 is supported',
-				});
-			} else {
-				record({
-					eventAction: 'WebGL2 Detect',
-					eventLabel: 'WebGL2 is not supported',
-				});
-			}
-		}
+		// isGamepadSupported,
+		// isRequestIdleCallbackSupported,
+		// isServiceWorkerSupported,
+		// isWebAssemblySupported,
+		// isWebAudioSupported,
+		// isWebGL2Supported,
+		// isWebGLSupported,
+		// isWebRTCSupported,
+		// isWebSocketSupported,
+		// isWebVRSupported,
+		// isWebWorkerSupported,
+
+
+		// Object.keys(features).
+
+
+		// if (features.isWebGL2Supported) {
+		// 	record({
+		// 		eventAction: 'WebGL2 support',
+		// 		eventLabel: 'WebGL2 is supported',
+		// 	});
+		// } else {
+		// 	record({
+		// 		eventAction: 'WebGL2 support',
+		// 		eventLabel: 'WebGL2 is not supported',
+		// 	});
+		// }
 	},
 };
