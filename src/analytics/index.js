@@ -21,38 +21,53 @@ export const analytics = {
 	register: (verbose = false) => {
 		const features = getFeatures(verbose);
 
-		console.log(features);
+		Object.keys(features).forEach((category) => {
+			Object.keys(features[category]).forEach((feature) => {
+				let value = features[category][feature];
+				console.log(value);
 
-		// Object.keys(features).forEach((feature) => {
-		// 	console.log(feature, features[feature]);
-		// });
+				switch (feature) {
 
-		// isGamepadSupported,
-		// isRequestIdleCallbackSupported,
-		// isServiceWorkerSupported,
-		// isWebAssemblySupported,
-		// isWebAudioSupported,
-		// isWebGL2Supported,
-		// isWebGLSupported,
-		// isWebRTCSupported,
-		// isWebSocketSupported,
-		// isWebVRSupported,
-		// isWebWorkerSupported,
+					// Browser features
+					case 'isGamepadSupported':
+						break;
+					case 'isRequestIdleCallbackSupported':
+						break;
+					case 'isServiceWorkerSupported':
+						break;
+					case 'isWebAssemblySupported':
+						break;
+					case 'isWebAudioSupported':
+						break;
+					case 'isWebGL2Supported':
+						break;
+					case 'isWebGLSupported':
+						break;
+					case 'isWebRTCSupported':
+						break;
+					case 'isWebSocketSupported':
+						break;
+					case 'isWebVRSupported':
+						break;
+					case 'isWebWorkerSupported':
+						break;
 
+					// Browser settings
+					case 'isCookieEnabled':
+						break;
+					case 'isDoNotTrackEnabled':
+						break;
 
-		// Object.keys(features).
+					// Hardware features
+					case 'devicePixelRatio':
+						break;
+					case 'workerPoolSize':
+						break;
 
-
-		// if (features.isWebGL2Supported) {
-		// 	record({
-		// 		eventAction: 'WebGL2 support',
-		// 		eventLabel: 'WebGL2 is supported',
-		// 	});
-		// } else {
-		// 	record({
-		// 		eventAction: 'WebGL2 support',
-		// 		eventLabel: 'WebGL2 is not supported',
-		// 	});
-		// }
+					default:
+						break;
+				}
+			});
+		});
 	},
 };
