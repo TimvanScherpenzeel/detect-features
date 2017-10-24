@@ -1,8 +1,8 @@
 // Hardware features
 import getDevicePixelRatio from './getDevicePixelRatio';
-import getEndian from './getEndian';
+import getEndianness from './getEndianness';
 import getWebWorkerPoolSize from './getWebWorkerPoolSize';
-import isWebVRDeviceAvailable from './isWebVRDeviceAvailable';
+import getWebVRDeviceType from './getWebVRDeviceType';
 
 // Browser settings
 import isCookieEnabled from './isCookieEnabled';
@@ -31,7 +31,6 @@ export const getFeatures = (verbose = false) => {
 		// Hardware features
 		devicePixelRatio: getDevicePixelRatio,
 		workerPoolSize: getWebWorkerPoolSize,
-		isWebVRDeviceAvailable,
 
 		// Browser settings
 		isCookieEnabled,
@@ -51,11 +50,17 @@ export const getFeatures = (verbose = false) => {
 		isWebWorkerSupported,
 	}
 
+	if (isWebVRSupported) {
+		return { ...features, ...{
+			webVRDeviceType: getWebVRDeviceType,
+		}};
+	}
+
 	// Verbose features
 	if (verbose) {
 		return { ...features, ...{
 			// Hardware features
-			endian: getEndian,
+			endianness: getEndianness,
 
 			// Browser features
 			webGL2Features: getWebGL2Features,
