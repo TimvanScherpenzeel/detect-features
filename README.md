@@ -14,15 +14,19 @@ FeatureAnalytics.register({
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
+```sh
   npm install
+```
 
 ## Development
 
+```sh
   npm start
 
   npm run lint
 
   npm run dist
+```
 
 ## Reported features (verbose mode)
 ```json
