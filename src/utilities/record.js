@@ -1,15 +1,16 @@
-export const record = (obj = {}) => {
-	const defaultEventObject = {
+export const record = (options = {}) => {
+	const defaults = {
 		hitType: 'event',
-		eventCategory: 'Features',
-		eventAction: '',
-		eventLabel: '',
 		nonInteraction: true,
 	};
 
+	const eventObject = { ...defaults, ...options };
+
+	console.log(eventObject);
+
 	if (window.GA_FEATURE_ANALYTICS !== undefined && typeof window.GA_FEATURE_ANALYTICS === 'function') {
 		const callback = () => {
-			window.GA_FEATURE_ANALYTICS('send', { ...defaultEventObject, ...obj });
+			window.GA_FEATURE_ANALYTICS('send', eventObject);
 		};
 
 		if ('requestIdleCallback' in window) {

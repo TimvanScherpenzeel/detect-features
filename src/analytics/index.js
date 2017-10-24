@@ -23,49 +23,23 @@ export const analytics = {
 
 		Object.keys(features).forEach((category) => {
 			Object.keys(features[category]).forEach((feature) => {
-				let value = features[category][feature];
-				console.log(value);
+				const value = features[category][feature];
 
-				switch (feature) {
-
-					// Browser features
-					case 'isGamepadSupported':
-						break;
-					case 'isRequestIdleCallbackSupported':
-						break;
-					case 'isServiceWorkerSupported':
-						break;
-					case 'isWebAssemblySupported':
-						break;
-					case 'isWebAudioSupported':
-						break;
-					case 'isWebGL2Supported':
-						break;
-					case 'isWebGLSupported':
-						break;
-					case 'isWebRTCSupported':
-						break;
-					case 'isWebSocketSupported':
-						break;
-					case 'isWebVRSupported':
-						break;
-					case 'isWebWorkerSupported':
-						break;
-
-					// Browser settings
-					case 'isCookieEnabled':
-						break;
-					case 'isDoNotTrackEnabled':
-						break;
-
-					// Hardware features
-					case 'devicePixelRatio':
-						break;
-					case 'workerPoolSize':
-						break;
-
-					default:
-						break;
+				if (typeof value === 'boolean' || typeof value === 'number') {
+					record({
+						eventCategory: `${category}`, 
+						eventAction: `${feature}`, 
+						eventValue: `${value}`,
+					});
+				} else if (typeof value === 'string') {
+					record({
+						eventCategory: `${category}`, 
+						eventAction: `${feature}`, 
+						eventLabel: `${value}`,
+					});
+				} else {
+					// WebGLFeatures and WebGL2Features
+					console.log(value);	
 				}
 			});
 		});
