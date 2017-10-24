@@ -1,4 +1,4 @@
-import isWebVRSupported from './isWebVRSupported';
+import isWebVRSupported from './../browserFeatures/isWebVRSupported';
 
 export default (() => {
 	if (isWebVRSupported) {
