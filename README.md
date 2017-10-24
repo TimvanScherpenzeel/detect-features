@@ -6,7 +6,6 @@ A general analytics instance to collect data on specific feature support.
 
 ```json
 {
-{
   "devicePixelRatio": 1,
   "endian": "little",
   "workerPoolSize": 8,
