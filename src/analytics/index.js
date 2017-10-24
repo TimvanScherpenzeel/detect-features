@@ -27,19 +27,19 @@ export const analytics = {
 
 				if (typeof value === 'boolean' || typeof value === 'number') {
 					record({
-						eventCategory: `${category}`, 
-						eventAction: `${feature}`, 
+						eventCategory: `${category}`,
+						eventAction: `${feature}`,
 						eventValue: `${value}`,
 					});
 				} else if (typeof value === 'string') {
 					record({
-						eventCategory: `${category}`, 
-						eventAction: `${feature}`, 
+						eventCategory: `${category}`,
+						eventAction: `${feature}`,
 						eventLabel: `${value}`,
 					});
 				} else {
 					// WebGLFeatures and WebGL2Features
-					console.log(value);	
+					console.log(value);
 				}
 			});
 		});

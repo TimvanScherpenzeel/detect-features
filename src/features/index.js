@@ -54,31 +54,38 @@ export const getFeatures = (verbose = false) => {
 			devicePixelRatio: getDevicePixelRatio,
 			workerPoolSize: getWebWorkerPoolSize,
 		},
-	}
+	};
 
 	// WebVR features
 	if (isWebVRSupported) {
-		return { ...features.hardwareFeatures, ...{
-			// Hardware features
-			webVRDeviceType: getWebVRDeviceType,
-		}};
+		return {
+			...features.hardwareFeatures,
+			...{
+				// Hardware features
+				webVRDeviceType: getWebVRDeviceType,
+			},
+		};
 	}
 
 	// Verbose features
 	if (verbose) {
-		features.browserFeatures = { ...features.browserFeatures, ...{
-			// Browser features
-			webGL2Features: getWebGL2Features,
-			webGLFeatures: getWebGLFeatures,
-		}};
+		features.browserFeatures = {
+			...features.browserFeatures,
+			...{
+				// Browser features
+				webGL2Features: getWebGL2Features,
+				webGLFeatures: getWebGLFeatures,
+			},
+		};
 
-		features.hardwareFeatures = { ...features.hardwareFeatures, ...{
-			// Hardware features
-			endianness: getEndianness,
-		}};
+		features.hardwareFeatures = {
+			...features.hardwareFeatures,
+			...{
+				// Hardware features
+				endianness: getEndianness,
+			},
+		};
 	}
-	
-	console.log(JSON.stringify(features));
 
 	return features;
 };
