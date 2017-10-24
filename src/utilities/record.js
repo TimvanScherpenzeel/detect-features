@@ -7,13 +7,9 @@ export const record = (obj = {}) => {
 		nonInteraction: true,
 	};
 
-	const eventObject = { ...defaultEventObject, ...obj };
-
-	console.log(eventObject);
-
 	if (window.GA_FEATURE_ANALYTICS !== undefined && typeof window.GA_FEATURE_ANALYTICS === 'function') {
 		const callback = () => {
-			window.GA_FEATURE_ANALYTICS('send', eventObject);
+			window.GA_FEATURE_ANALYTICS('send', { ...defaultEventObject, ...obj });
 		};
 
 		if ('requestIdleCallback' in window) {
@@ -22,6 +18,6 @@ export const record = (obj = {}) => {
 			callback();
 		}
 	} else {
-		console.log('Your checking code might not be valid.');
+		console.error('Please provide a valid UA code (UA-xxxx-yy)');
 	}
 };

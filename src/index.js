@@ -8,7 +8,8 @@ export function register(trackingId, verbose = false) {
 	if (trackingId === undefined || !isValidUACode(trackingId)) {
 		console.error('Please provide a valid UA code (UA-xxxx-yy)');
 		return;
-	};
+	}
 
-	analytics.register(trackingId, verbose);
+	analytics.initialize(trackingId);
+	analytics.register(verbose);
 }

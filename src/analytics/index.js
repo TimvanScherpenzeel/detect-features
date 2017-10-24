@@ -2,7 +2,7 @@
 import { record } from '../utilities/record';
 
 // Features
-import * as features from '../features';
+import { getFeatures } from '../features';
 
 export const analytics = {
 	initialize: (trackingId) => {
@@ -18,7 +18,8 @@ export const analytics = {
 	},
 
 	register: (verbose = false) => {
-		window.FEATURE_ANALYTICS = features;
+		const features = getFeatures(verbose);
+		console.log(features);
 
 		// WebGL support detection
 		if (verbose) {

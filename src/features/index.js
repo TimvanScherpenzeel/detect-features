@@ -1,18 +1,11 @@
-/*
-	Already covered by Google Analytics
-	- Platform (deviced by device, OS, browser, etc..)
-	- Device (desktop, tablet, phone)
-	- Inbound links
-	- Total time spend on site
-*/
-
+// Device features
 import getDevicePixelRatio from './getDevicePixelRatio';
+
+// Browser features
 import getEndian from './getEndian';
-import getWebGL2Features from './getWebGL2Features';
-import getWebGLFeatures from './getWebGLFeatures';
 import getWebWorkerPoolSize from './getWebWorkerPoolSize';
 
-// Support
+// Browser support
 import isGamepadSupported from './isGamepadSupported';
 import isRequestIdleCallbackSupported from './isRequestIdleCallbackSupported';
 import isServiceWorkerSupported from './isServiceWorkerSupported';
@@ -25,23 +18,41 @@ import isWebRTCSupported from './isWebRTCSupported';
 import isWebVRDeviceAvailable from './isWebVRDeviceAvailable';
 import isWebWorkerSupported from './isWebWorkerSupported';
 
-// Features
-export const features = {
-	devicePixelRatio: getDevicePixelRatio,
-	endian: getEndian,
-	workerPoolSize: getWebWorkerPoolSize,
-	webGL2Features: getWebGL2Features,
-	webGLFeatures: getWebGLFeatures,
+// Verbose features
+import getWebGL2Features from './getWebGL2Features';
+import getWebGLFeatures from './getWebGLFeatures';
 
-	isGamepadSupported,
-	isRequestIdleCallbackSupported,
-	isServiceWorkerSupported,
-	isWebAssemblySupported,
-	isWebAudioSupported,
-	isWebGL2Supported,
-	isWebGLSupported,
-	isWebRTCSupported,
-	isWebSocketSupported,
-	isWebVRDeviceAvailable,
-	isWebWorkerSupported,
+// Features
+export const getFeatures = (verbose = false) => {
+	const features = {
+		// Device features
+		devicePixelRatio: getDevicePixelRatio,
+
+		// Browser features
+		endian: getEndian,
+		workerPoolSize: getWebWorkerPoolSize,
+
+		// Browser support
+		isGamepadSupported,
+		isRequestIdleCallbackSupported,
+		isServiceWorkerSupported,
+		isWebAssemblySupported,
+		isWebAudioSupported,
+		isWebGL2Supported,
+		isWebGLSupported,
+		isWebRTCSupported,
+		isWebSocketSupported,
+		isWebVRDeviceAvailable,
+		isWebWorkerSupported,
+	}
+
+	// Verbose features
+	if (verbose) {
+		return { ...features, ...{
+			webGL2Features: getWebGL2Features,
+			webGLFeatures: getWebGLFeatures,
+		}};
+	} else {
+		return features;
+	}
 };
