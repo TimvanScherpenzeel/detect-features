@@ -78,5 +78,7 @@ export const getFeatures = (verbose = false) => {
 		}};
 	}
 	
+	console.log(JSON.stringify(features));
+
 	return features;
 };
