@@ -1,3 +1,15 @@
+import isWebVRSupported from './isWebVRSupported';
+
 export default (() => {
-	return !!navigator.getVRDisplays || false;
+	if (isWebVRSupported) {
+		navigator.getVRDisplays().then((displays) => {
+			if (displays.length === 0) {
+				return false;
+			} else {
+				return true;
+			}
+		});
+	} else {
+		return false;
+	}
 })();
