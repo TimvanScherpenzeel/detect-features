@@ -19,6 +19,6 @@ export const record = (options = {}) => {
 			callback();
 		}
 	} else {
-		console.error('Please provide a valid UA code (UA-xxxx-yy)');
+		console.error('Google Analytics has not been initialized');
 	}
 };
