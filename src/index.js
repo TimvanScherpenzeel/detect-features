@@ -4,12 +4,17 @@ import { analytics } from './analytics';
 // Utilities
 import isValidUACode from './utilities/isValidUACode';
 
-export function register(trackingId, verbose = false) {
-	if (trackingId === undefined || !isValidUACode(trackingId)) {
+export function register(options = {}) {
+	this.trackingId = '';
+	this.verbose = false;
+
+	Object.assign(this, options);
+
+	if (this.trackingId === undefined || !isValidUACode(this.trackingId)) {
 		console.error('Please provide a valid UA code (UA-xxxx-yy)');
 		return;
 	}
 
-	analytics.initialize(trackingId);
-	analytics.register(verbose);
+	analytics.initialize(this.trackingId);
+	analytics.register(this.verbose);
 }

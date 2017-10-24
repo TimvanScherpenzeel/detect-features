@@ -7,7 +7,10 @@
         <title>Feature Analytics</title>
         <script src="../dist/feature-analytics.js"></script>
         <script>
-            FeatureAnalytics.register('UA-54317375-2', true);
+            FeatureAnalytics.register({
+                trackingId: 'UA-54317375-2', 
+                verbose: true,
+            });
         </script>
     </head>
     <body>

@@ -8,8 +8,6 @@ export default (() => {
 
 	const glExtensionDebugRendererInfo = gl.getExtension('WEBGL_debug_renderer_info');
 
-	console.log(gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.LOW_FLOAT));
-
 	const features = {
 		renderer: gl.getParameter(gl.RENDERER),
 		vendor: gl.getParameter(gl.VENDOR),
@@ -50,8 +48,6 @@ export default (() => {
 		fragmentShaderMediumPrecision: gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.MEDIUM_FLOAT),
 		fragmentShaderLowPrecision: gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.LOW_FLOAT),
 	};
-
-	console.log(features);
 
 	return features;
 })();
