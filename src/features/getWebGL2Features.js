@@ -17,7 +17,7 @@ export default (() => {
 		vendorUnmasked: glExtensionDebugRendererInfo && gl.getParameter(glExtensionDebugRendererInfo.UNMASKED_VENDOR_WEBGL),
 
 		supportedExtensions: gl.getSupportedExtensions(),
-		antialias: gl.getContextAttributes().antialias ? true : false,
+		antialias: !!gl.getContextAttributes().antialias,
 
 		redBits: gl.getParameter(gl.RED_BITS),
 		greenBits: gl.getParameter(gl.GREEN_BITS),
