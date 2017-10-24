@@ -1,13 +1,3 @@
-// Hardware features
-import getDevicePixelRatio from './hardwareFeatures/getDevicePixelRatio';
-import getEndianness from './hardwareFeatures/getEndianness';
-import getWebWorkerPoolSize from './hardwareFeatures/getWebWorkerPoolSize';
-import getWebVRDeviceType from './hardwareFeatures/getWebVRDeviceType';
-
-// Browser settings
-import isCookieEnabled from './browserSettings/isCookieEnabled';
-import isDoNotTrackEnabled from './browserSettings/isDoNotTrackEnabled';
-
 // Browser features
 import getWebGL2Features from './browserFeatures/getWebGL2Features';
 import getWebGLFeatures from './browserFeatures/getWebGLFeatures';
@@ -23,22 +13,21 @@ import isWebSocketSupported from './browserFeatures/isWebSocketSupported';
 import isWebVRSupported from './browserFeatures/isWebVRSupported';
 import isWebWorkerSupported from './browserFeatures/isWebWorkerSupported';
 
+// Browser settings
+import isCookieEnabled from './browserSettings/isCookieEnabled';
+import isDoNotTrackEnabled from './browserSettings/isDoNotTrackEnabled';
+
+// Hardware features
+import getDevicePixelRatio from './hardwareFeatures/getDevicePixelRatio';
+import getEndianness from './hardwareFeatures/getEndianness';
+import getWebWorkerPoolSize from './hardwareFeatures/getWebWorkerPoolSize';
+import getWebVRDeviceType from './hardwareFeatures/getWebVRDeviceType';
+
+
 // Features
 export const getFeatures = (verbose = false) => {
 	// Default features
 	const features = {
-		// Hardware features
-		hardwareFeatures: {
-			devicePixelRatio: getDevicePixelRatio,
-			workerPoolSize: getWebWorkerPoolSize,
-		},
-
-		// Browser settings
-		browserSettings: {
-			isCookieEnabled,
-			isDoNotTrackEnabled,
-		},
-
 		// Browser features
 		browserFeatures: {
 			isGamepadSupported,
@@ -53,6 +42,18 @@ export const getFeatures = (verbose = false) => {
 			isWebVRSupported,
 			isWebWorkerSupported,
 		},
+
+		// Browser settings
+		browserSettings: {
+			isCookieEnabled,
+			isDoNotTrackEnabled,
+		},
+
+		// Hardware features
+		hardwareFeatures: {
+			devicePixelRatio: getDevicePixelRatio,
+			workerPoolSize: getWebWorkerPoolSize,
+		},
 	}
 
 	// WebVR features
@@ -65,15 +66,15 @@ export const getFeatures = (verbose = false) => {
 
 	// Verbose features
 	if (verbose) {
-		features.hardwareFeatures = { ...features.hardwareFeatures, ...{
-			// Hardware features
-			endianness: getEndianness,
-		}};
-
 		features.browserFeatures = { ...features.browserFeatures, ...{
 			// Browser features
 			webGL2Features: getWebGL2Features,
 			webGLFeatures: getWebGLFeatures,
+		}};
+
+		features.hardwareFeatures = { ...features.hardwareFeatures, ...{
+			// Hardware features
+			endianness: getEndianness,
 		}};
 	}
 	
