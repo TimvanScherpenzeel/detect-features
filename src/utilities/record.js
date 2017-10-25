@@ -6,8 +6,6 @@ export const record = (options = {}) => {
 
 	const eventObject = { ...defaults, ...options };
 
-	console.log(eventObject);
-
 	if (window.GA_FEATURE_ANALYTICS !== undefined && typeof window.GA_FEATURE_ANALYTICS === 'function') {
 		const callback = () => {
 			window.GA_FEATURE_ANALYTICS('send', eventObject);

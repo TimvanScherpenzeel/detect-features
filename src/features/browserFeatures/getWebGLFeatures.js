@@ -18,63 +18,6 @@ export default (() => {
 
 		supportedExtensions: gl.getSupportedExtensions(),
 		antialias: !!gl.getContextAttributes().antialias,
-
-		redBits: gl.getParameter(gl.RED_BITS),
-		greenBits: gl.getParameter(gl.GREEN_BITS),
-		blueBits: gl.getParameter(gl.BLUE_BITS),
-		alphaBits: gl.getParameter(gl.ALPHA_BITS),
-		depthBits: gl.getParameter(gl.DEPTH_BITS),
-		stencilBits: gl.getParameter(gl.STENCIL_BITS),
-
-		maxRenderBufferSize: gl.getParameter(gl.MAX_RENDERBUFFER_SIZE),
-		maxCombinedTextureImageUnits: gl.getParameter(gl.MAX_COMBINED_TEXTURE_IMAGE_UNITS),
-		maxCubeMapTextureSize: gl.getParameter(gl.MAX_CUBE_MAP_TEXTURE_SIZE),
-		maxFragmentUniformVectors: gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_VECTORS),
-		maxTextureImageUnits: gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS),
-		maxTextureSize: gl.getParameter(gl.MAX_TEXTURE_SIZE),
-		maxVaryingVectors: gl.getParameter(gl.MAX_VARYING_VECTORS),
-		maxVertexAttributes: gl.getParameter(gl.MAX_VERTEX_ATTRIBS),
-		maxVertexTextureImageUnits: gl.getParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS),
-		maxVertexUniformVectors: gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS),
-		aliasedLineWidthRange: gl.getParameter(gl.ALIASED_LINE_WIDTH_RANGE),
-		aliasedPointSizeRange: gl.getParameter(gl.ALIASED_POINT_SIZE_RANGE),
-		maxViewportDimensions: gl.getParameter(gl.MAX_VIEWPORT_DIMS),
-
-		vertexShaderHighPrecision: [
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.HIGH_FLOAT).rangeMin,
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.HIGH_FLOAT).rangeMax,
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.HIGH_FLOAT).precision,
-		],
-
-		vertexShaderMediumPrecision: [
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.MEDIUM_FLOAT).rangeMin,
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.MEDIUM_FLOAT).rangeMax,
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.MEDIUM_FLOAT).precision,
-		],
-
-		vertexShaderLowPrecision: [
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.LOW_FLOAT).rangeMin,
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.LOW_FLOAT).rangeMax,
-			gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.LOW_FLOAT).precision,
-		],
-
-		fragmentShaderHighPrecision: [
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT).rangeMin,
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT).rangeMax,
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT).precision,
-		],
-
-		fragmentShaderMediumPrecision: [
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.MEDIUM_FLOAT).rangeMin,
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.MEDIUM_FLOAT).rangeMax,
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.MEDIUM_FLOAT).precision,
-		],
-
-		fragmentShaderLowPrecision: [
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.LOW_FLOAT).rangeMin,
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.LOW_FLOAT).rangeMax,
-			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.LOW_FLOAT).precision,
-		],
 	};
 
 	return features;

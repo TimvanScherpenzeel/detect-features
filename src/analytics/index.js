@@ -39,7 +39,7 @@ export const analytics = {
 					});
 				} else {
 					// WebGLFeatures and WebGL2Features
-					console.log(value);
+					// console.log(value);
 				}
 			});
 		});
