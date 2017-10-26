@@ -4,42 +4,34 @@ import { record } from '../utilities/record';
 // Features
 import { getFeatures } from '../features';
 
-let category;
-let feature;
-let value;
+const createEventObject = (options = {}) => {
+	Object.assign(this, options);
 
-const createEventObject = () => {
-	switch (typeof value) {
+	switch (typeof this.value) {
+		case 'object':
+			Object.keys(this.value).forEach((value) => {
+				console.log(value, this.value[value]);
+			});
+			break;
 		case 'boolean':
 		case 'number':
-			console.log(category, feature, value);
+			// console.log(this.category, this.feature, this.value);
 			record({
-			 	eventCategory: `${category}`,
-			 	eventAction: `${feature}`,
-			 	eventValue: `${value}`,
+				eventCategory: `${this.category}`,
+				eventAction: `${this.feature}`,
+				eventValue: `${this.value}`,
 			});
 			break;
 		case 'string':
-			console.log(category, feature, value);
+			// console.log(this.category, this.feature, this.value);
 			record({
-				eventCategory: `${category}`,
-				eventAction: `${feature}`,
-				eventLabel: `${value}`,
-			});
-			break;
-		case 'object':
-			const _value = value;
-			const _feature = feature;
-
-			Object.keys(_value).forEach((data) => {
-				category = category.concat(' ' + _feature);
-				feature = data;
-				value = _value[data];
-				createEventObject();
+				eventCategory: `${this.category}`,
+				eventAction: `${this.feature}`,
+				eventLabel: `${this.value}`,
 			});
 			break;
 		default:
-			console.warn(`Type of value: ${value} could not be recognized`)
+			console.warn(`Value of type: ${this.value} could not be recognized`);
 			break;
 	}
 };
@@ -61,13 +53,13 @@ export const analytics = {
 	register: (verbose = false) => {
 		const features = getFeatures(verbose);
 
-		Object.keys(features).forEach((_category) => {
-			Object.keys(features[_category]).forEach((_feature) => {
-				category = _category;
-				feature = _feature;
-				value = features[category][feature];
-
-				createEventObject();
+		Object.keys(features).forEach((category) => {
+			Object.keys(features[category]).forEach((feature) => {
+				createEventObject({
+					category,
+					feature,
+					value: features[category][feature],
+				});
 			});
 		});
 	},
