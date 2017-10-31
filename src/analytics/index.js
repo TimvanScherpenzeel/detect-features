@@ -11,6 +11,7 @@ const createEventObject = (options = {}) => {
 		case 'object':
 			Object.keys(this.value).forEach((value) => {
 				console.log(value, this.value[value]);
+				console.log(`${this.category} - ${this.feature}`);
 			});
 			break;
 		case 'boolean':
