@@ -26,7 +26,10 @@ const config = {
 				test: /\.js$/,
 				loader: 'babel-loader?cacheDirectory=true',
 				options: {
-					plugins: ['transform-object-rest-spread'],
+					plugins: [
+						'transform-object-rest-spread',
+						'transform-object-assign',
+					],
 					presets: [
 						['es2015', { modules: false }],
 					],
