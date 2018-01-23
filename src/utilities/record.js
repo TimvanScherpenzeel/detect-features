@@ -17,6 +17,6 @@ export const record = (options = {}) => {
 			callback();
 		}
 	} else {
-		console.error('Google Analytics has not been initialized');
+		console.error('Google Feature Analytics has not been initialized');
 	}
 };

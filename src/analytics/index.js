@@ -11,7 +11,7 @@ const createEventObject = (options = {}) => {
 		case 'object':
 			Object.keys(this.value).forEach((value) => {
 				if (typeof this.value[value] !== 'string' && this.value[value] !== undefined) {
-					Object.keys(this.value[value]).map((key) => {
+					Object.keys(this.value[value]).forEach((key) => {
 						if (this.log) {
 							console.log({
 								eventCategory: `${this.category}`,
