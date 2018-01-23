@@ -6,6 +6,7 @@ import isValidUACode from './utilities/isValidUACode';
 
 export function register(options = {}) {
 	this.verbose = false;
+	this.log = false;
 
 	Object.assign(this, options);
 
@@ -15,5 +16,5 @@ export function register(options = {}) {
 	}
 
 	analytics.initialize(this.trackingId);
-	analytics.register(this.verbose);
+	analytics.register(this.verbose, this.log);
 }

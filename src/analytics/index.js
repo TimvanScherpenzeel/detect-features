@@ -12,11 +12,14 @@ const createEventObject = (options = {}) => {
 			Object.keys(this.value).forEach((value) => {
 				if (typeof this.value[value] !== 'string' && this.value[value] !== undefined) {
 					Object.keys(this.value[value]).map((key) => {
-						console.log({
-							eventCategory: `${this.category}`,
-							eventAction: `${value}`,
-							eventValue: `${key}`,
-						});
+						if (this.log) {
+							console.log({
+								eventCategory: `${this.category}`,
+								eventAction: `${value}`,
+								eventValue: `${key}`,
+							});
+						}
+
 						record({
 							eventCategory: `${this.category}`,
 							eventAction: `${value}`,
@@ -26,11 +29,14 @@ const createEventObject = (options = {}) => {
 				}
 
 				if (typeof this.value[value] === 'string') {
-					console.log({
-						eventCategory: `${this.category}`,
-						eventAction: `${value}`,
-						eventValue: `${this.value[value]}`,
-					});
+					if (this.log) {
+						console.log({
+							eventCategory: `${this.category}`,
+							eventAction: `${value}`,
+							eventValue: `${this.value[value]}`,
+						});
+					}
+
 					record({
 						eventCategory: `${this.category}`,
 						eventAction: `${value}`,
@@ -41,11 +47,14 @@ const createEventObject = (options = {}) => {
 			break;
 		case 'boolean':
 		case 'number':
-			console.log({
-				eventCategory: `${this.category}`,
-				eventAction: `${this.feature}`,
-				eventValue: `${this.value}`,
-			});
+			if (this.log) {
+				console.log({
+					eventCategory: `${this.category}`,
+					eventAction: `${this.feature}`,
+					eventValue: `${this.value}`,
+				});
+			}
+
 			record({
 				eventCategory: `${this.category}`,
 				eventAction: `${this.feature}`,
@@ -53,11 +62,14 @@ const createEventObject = (options = {}) => {
 			});
 			break;
 		case 'string':
-			console.log({
-				eventCategory: `${this.category}`,
-				eventAction: `${this.feature}`,
-				eventLabel: `${this.value}`,
-			});
+			if (this.log) {
+				console.log({
+					eventCategory: `${this.category}`,
+					eventAction: `${this.feature}`,
+					eventLabel: `${this.value}`,
+				});
+			}
+
 			record({
 				eventCategory: `${this.category}`,
 				eventAction: `${this.feature}`,
@@ -65,7 +77,10 @@ const createEventObject = (options = {}) => {
 			});
 			break;
 		default:
-			console.warn(`Value of type: ${this.value} could not be recognized`);
+			if (this.log) {
+				console.warn(`Value of type: ${this.value} could not be recognized`);
+			}
+
 			break;
 	}
 };
@@ -84,7 +99,7 @@ export const analytics = {
 		/* eslint-enable */
 	},
 
-	register: (verbose = false) => {
+	register: (verbose = false, log = false) => {
 		const features = getFeatures(verbose);
 
 		Object.keys(features).forEach((category) => {
@@ -93,6 +108,7 @@ export const analytics = {
 					category,
 					feature,
 					value: features[category][feature],
+					log,
 				});
 			});
 		});
