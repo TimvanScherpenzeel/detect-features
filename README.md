@@ -1,6 +1,8 @@
 # Feature analytics
 
-Reports hardware features and browser support of features to Google Analytics. Useful for making decisions based on data instead of gut feelings.
+Reports hardware features and browser support of features to Google Analytics.
+
+Useful for making decisions based on data instead of gut feelings.
 
 ## Usage
 ```javascript
