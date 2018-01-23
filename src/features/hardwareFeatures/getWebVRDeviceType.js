@@ -1,7 +1,7 @@
-import isWebVRSupportedAndActive from './../browserFeatures/isWebVRSupportedAndActive';
+import isWebVRSupported from './../browserFeatures/isWebVRSupported';
 
 export default (() => {
-	if (isWebVRSupportedAndActive) {
+	if (isWebVRSupported) {
 		navigator.getVRDisplays()
 			.then((displays) => {
 				if (displays.length > 0) {
@@ -21,8 +21,13 @@ export default (() => {
 				} else {
 					return false;
 				}
+			})
+			.catch((error) => {
+				return false;
 			});
 	} else {
 		return false;
 	}
+
+	return true;
 })();

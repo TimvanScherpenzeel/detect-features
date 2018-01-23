@@ -10,7 +10,7 @@ import isWebGL2Supported from './browserFeatures/isWebGL2Supported';
 import isWebGLSupported from './browserFeatures/isWebGLSupported';
 import isWebRTCSupported from './browserFeatures/isWebRTCSupported';
 import isWebSocketSupported from './browserFeatures/isWebSocketSupported';
-import isWebVRSupportedAndActive from './browserFeatures/isWebVRSupportedAndActive';
+import isWebVRSupported from './browserFeatures/isWebVRSupported';
 import isWebWorkerSupported from './browserFeatures/isWebWorkerSupported';
 
 // Browser settings
@@ -39,7 +39,7 @@ export const getFeatures = (verbose = false) => {
 			isWebGLSupported,
 			isWebRTCSupported,
 			isWebSocketSupported,
-			isWebVRSupportedAndActive,
+			isWebVRSupported,
 			isWebWorkerSupported,
 		},
 
@@ -57,7 +57,7 @@ export const getFeatures = (verbose = false) => {
 	};
 
 	// WebVR features
-	if (isWebVRSupportedAndActive) {
+	if (isWebVRSupported) {
 		return {
 			...features.hardwareFeatures,
 			...{

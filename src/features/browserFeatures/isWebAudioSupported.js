@@ -1,3 +1,3 @@
 export default (() => {
-	return !!window.AudioContext || false;
+	return !!window.AudioContext || !!window.webkitAudioContext || false;
 })();

@@ -41,7 +41,7 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
     "isWebGLSupported": true,
     "isWebRTCSupported": true,
     "isWebSocketSupported": true,
-    "isWebVRSupportedAndActive": false,
+    "isWebVRSupported": false,
     "isWebWorkerSupported": true,
     "webGL2Features": {
       "renderer": "WebKit WebGL",
