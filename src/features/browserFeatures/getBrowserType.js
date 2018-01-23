@@ -4,8 +4,6 @@ export default (() => {
     const userAgentParser = new UAParser();
     const userAgent = userAgentParser.getResult();
 
-    console.log(userAgent);
-
     const features = {
         browserName: userAgent.browser.name || 'Unknown',
         browserVersion: userAgent.browser.version || 'Unknown',
