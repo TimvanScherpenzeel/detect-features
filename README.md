@@ -32,6 +32,17 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 ```json
 {
   "browserFeatures": {
+    "browserType": {
+      "browserName": "Chrome",
+      "browserVersion": "63.0.3239.132",
+      "browserEngineName": "WebKit",
+      "browserEngineVersion": "537.36",
+      "operatingSystemName": "Mac OS",
+      "operatingSystemVersion": "10.12.6",
+      "deviceModel": "Unknown",
+      "deviceType": "Unknown",
+      "deviceVendor": "Unknown"
+    },
     "isGamepadSupported": true,
     "isRequestIdleCallbackSupported": true,
     "isServiceWorkerSupported": true,
@@ -48,203 +59,61 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
       "vendor": "WebKit",
       "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
       "shaderVersion": "WebGL GLSL ES 3.00 (OpenGL ES GLSL ES 3.0 Chromium)",
-      "rendererUnmasked": "NVIDIA GeForce GT 650M OpenGL Engine",
-      "vendorUnmasked": "NVIDIA Corporation",
-      "supportedExtensions": [
-        "EXT_color_buffer_float",
-        "EXT_disjoint_timer_query_webgl2",
-        "EXT_texture_filter_anisotropic",
-        "OES_texture_float_linear",
-        "WEBGL_compressed_texture_s3tc",
-        "WEBGL_compressed_texture_s3tc_srgb",
-        "WEBGL_debug_renderer_info",
-        "WEBGL_debug_shaders",
-        "WEBGL_get_buffer_sub_data_async",
-        "WEBGL_lose_context"
-      ],
-      "antialias": true,
-      "redBits": 8,
-      "greenBits": 8,
-      "blueBits": 8,
-      "alphaBits": 8,
-      "depthBits": 24,
-      "stencilBits": 0,
-      "maxRenderBufferSize": 16384,
-      "maxCombinedTextureImageUnits": 80,
-      "maxCubeMapTextureSize": 16384,
-      "maxFragmentUniformVectors": 512,
-      "maxTextureImageUnits": 16,
-      "maxTextureSize": 16384,
-      "maxVaryingVectors": 31,
-      "maxVertexAttributes": 16,
-      "maxVertexTextureImageUnits": 16,
-      "maxVertexUniformVectors": 1024,
-      "aliasedLineWidthRange": {
-        "0": 1,
-        "1": 1
-      },
-      "aliasedPointSizeRange": {
-        "0": 1,
-        "1": 2047
-      },
-      "maxViewportDimensions": {
-        "0": 16384,
-        "1": 16384
-      },
-      "vertexShaderHighPrecision": [
-        127,
-        127,
-        23
-      ],
-      "vertexShaderMediumPrecision": [
-        127,
-        127,
-        23
-      ],
-      "vertexShaderLowPrecision": [
-        127,
-        127,
-        23
-      ],
-      "fragmentShaderHighPrecision": [
-        127,
-        127,
-        23
-      ],
-      "fragmentShaderMediumPrecision": [
-        127,
-        127,
-        23
-      ],
-      "fragmentShaderLowPrecision": [
-        127,
-        127,
-        23
-      ],
-      "maxVertexUniformComponents": 4096,
-      "maxVertexUniformBlocks": 14,
-      "maxVertexOutputComponents": 128,
-      "maxVaryingComponents": 124,
-      "maxFragmentUniformComponents": 2048,
-      "maxFragmentUniformBlocks": 14,
-      "maxFragmentInputComponents": 128,
-      "minProgramTexelOffset": -8,
-      "maxProgramTexelOffset": 7,
-      "maxDrawBuffers": 8,
-      "maxColorAttachments": 8,
-      "maxSamples": 8,
-      "max3dTextureSize": 2048,
-      "maxArrayTextureLayers": 2048,
-      "maxTextureLodBias": 15,
-      "maxUniformBufferBindings": 70,
-      "maxUniformBlockSize": 65536,
-      "uniformBufferOffsetAlignment": 256,
-      "maxCombinedUniformBlocks": 70,
-      "maxCombinedVertexUniformComponents": 233472,
-      "maxCombinedFragmentUniformComponents": 231424,
-      "maxTransformFeedbackInterleavedComponents": 64,
-      "maxTransformFeedbackSeparateAttribs": 4,
-      "maxTransformFeedbackSeparateComponents": 4,
-      "maxElementIndex": 4294967295,
-      "maxServerWaitTimeout": 0
+      "rendererUnmasked": "AMD Radeon R9 M370X OpenGL Engine",
+      "vendorUnmasked": "ATI Technologies Inc.",
+      "supportedExtensions": {
+        "EXT_color_buffer_float": true,
+        "EXT_disjoint_timer_query_webgl2": true,
+        "EXT_texture_filter_anisotropic": true,
+        "OES_texture_float_linear": true,
+        "WEBGL_compressed_texture_s3tc": true,
+        "WEBGL_compressed_texture_s3tc_srgb": true,
+        "WEBGL_debug_renderer_info": true,
+        "WEBGL_debug_shaders": true,
+        "WEBGL_lose_context": true
+      }
     },
     "webGLFeatures": {
       "renderer": "WebKit WebGL",
       "vendor": "WebKit",
       "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
       "shaderVersion": "WebGL GLSL ES 1.0 (OpenGL ES GLSL ES 1.0 Chromium)",
-      "rendererUnmasked": "NVIDIA GeForce GT 650M OpenGL Engine",
-      "vendorUnmasked": "NVIDIA Corporation",
-      "supportedExtensions": [
-        "ANGLE_instanced_arrays",
-        "EXT_blend_minmax",
-        "EXT_disjoint_timer_query",
-        "EXT_frag_depth",
-        "EXT_shader_texture_lod",
-        "EXT_sRGB",
-        "EXT_texture_filter_anisotropic",
-        "WEBKIT_EXT_texture_filter_anisotropic",
-        "OES_element_index_uint",
-        "OES_standard_derivatives",
-        "OES_texture_float",
-        "OES_texture_float_linear",
-        "OES_texture_half_float",
-        "OES_texture_half_float_linear",
-        "OES_vertex_array_object",
-        "WEBGL_compressed_texture_s3tc",
-        "WEBKIT_WEBGL_compressed_texture_s3tc",
-        "WEBGL_compressed_texture_s3tc_srgb",
-        "WEBGL_debug_renderer_info",
-        "WEBGL_debug_shaders",
-        "WEBGL_depth_texture",
-        "WEBKIT_WEBGL_depth_texture",
-        "WEBGL_lose_context",
-        "WEBKIT_WEBGL_lose_context"
-      ],
-      "antialias": true,
-      "redBits": 8,
-      "greenBits": 8,
-      "blueBits": 8,
-      "alphaBits": 8,
-      "depthBits": 24,
-      "stencilBits": 0,
-      "maxRenderBufferSize": 16384,
-      "maxCombinedTextureImageUnits": 80,
-      "maxCubeMapTextureSize": 16384,
-      "maxFragmentUniformVectors": 512,
-      "maxTextureImageUnits": 16,
-      "maxTextureSize": 16384,
-      "maxVaryingVectors": 31,
-      "maxVertexAttributes": 16,
-      "maxVertexTextureImageUnits": 16,
-      "maxVertexUniformVectors": 1024,
-      "aliasedLineWidthRange": {
-        "0": 1,
-        "1": 1
-      },
-      "aliasedPointSizeRange": {
-        "0": 1,
-        "1": 2047
-      },
-      "maxViewportDimensions": {
-        "0": 16384,
-        "1": 16384
-      },
-      "vertexShaderHighPrecision": [
-        127,
-        127,
-        23
-      ],
-      "vertexShaderMediumPrecision": [
-        127,
-        127,
-        23
-      ],
-      "vertexShaderLowPrecision": [
-        127,
-        127,
-        23
-      ],
-      "fragmentShaderHighPrecision": [
-        127,
-        127,
-        23
-      ],
-      "fragmentShaderMediumPrecision": [
-        127,
-        127,
-        23
-      ],
-      "fragmentShaderLowPrecision": [
-        127,
-        127,
-        23
-      ]
+      "rendererUnmasked": "AMD Radeon R9 M370X OpenGL Engine",
+      "vendorUnmasked": "ATI Technologies Inc.",
+      "supportedExtensions": {
+        "ANGLE_instanced_arrays": true,
+        "EXT_blend_minmax": true,
+        "EXT_color_buffer_half_float": true,
+        "EXT_disjoint_timer_query": true,
+        "EXT_frag_depth": true,
+        "EXT_shader_texture_lod": true,
+        "EXT_texture_filter_anisotropic": true,
+        "WEBKIT_EXT_texture_filter_anisotropic": true,
+        "EXT_sRGB": true,
+        "OES_element_index_uint": true,
+        "OES_standard_derivatives": true,
+        "OES_texture_float": true,
+        "OES_texture_float_linear": true,
+        "OES_texture_half_float": true,
+        "OES_texture_half_float_linear": true,
+        "OES_vertex_array_object": true,
+        "WEBGL_color_buffer_float": true,
+        "WEBGL_compressed_texture_s3tc": true,
+        "WEBKIT_WEBGL_compressed_texture_s3tc": true,
+        "WEBGL_compressed_texture_s3tc_srgb": true,
+        "WEBGL_debug_renderer_info": true,
+        "WEBGL_debug_shaders": true,
+        "WEBGL_depth_texture": true,
+        "WEBKIT_WEBGL_depth_texture": true,
+        "WEBGL_draw_buffers": true,
+        "WEBGL_lose_context": true,
+        "WEBKIT_WEBGL_lose_context": true
+      }
     }
   },
   "browserSettings": {
     "isCookieEnabled": true,
-    "isDoNotTrackEnabled": true
+    "isDoNotTrackEnabled": false
   },
   "hardwareFeatures": {
     "devicePixelRatio": 1,
