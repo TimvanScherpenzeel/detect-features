@@ -21,5 +21,7 @@
     "eslint-plugin-import": "^2.7.0",
     "webpack": "^3.8.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ua-parser-js": "^0.7.17"
+  }
 }

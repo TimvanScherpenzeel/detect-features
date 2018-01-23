@@ -3,7 +3,7 @@ export default (() => {
 
 	if (!!doNotTrack || doNotTrack === 'unspecified') {
 		return false;
-	} else {
-		return true;
 	}
+
+	return true;
 })();

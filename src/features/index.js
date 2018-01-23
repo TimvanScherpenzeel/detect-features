@@ -1,4 +1,5 @@
 // Browser features
+import getBrowserType from './browserFeatures/getBrowserType';
 import getWebGL2Features from './browserFeatures/getWebGL2Features';
 import getWebGLFeatures from './browserFeatures/getWebGLFeatures';
 import isGamepadSupported from './browserFeatures/isGamepadSupported';
@@ -28,6 +29,7 @@ export const getFeatures = (verbose = false) => {
 	const features = {
 		// Browser features
 		browserFeatures: {
+			browserType: getBrowserType,
 			isGamepadSupported,
 			isRequestIdleCallbackSupported,
 			isServiceWorkerSupported,
