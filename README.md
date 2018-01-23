@@ -9,6 +9,7 @@ Useful for making decisions based on data instead of gut feelings.
   FeatureAnalytics.register({
       trackingId: 'UA-XXXXXXXX-Y',
       verbose: true,
+      log: true,
   });
 ```
 
