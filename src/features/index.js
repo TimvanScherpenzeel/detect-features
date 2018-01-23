@@ -58,7 +58,7 @@ export const getFeatures = (verbose = false) => {
 
 	// WebVR features
 	if (isWebVRSupported) {
-		return {
+		features.hardwareFeatures = {
 			...features.hardwareFeatures,
 			...{
 				// Hardware features
