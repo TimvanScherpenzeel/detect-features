@@ -5,7 +5,7 @@ Reports hardware features and browser support of features to Google Analytics.
 ## Usage
 ```javascript
 FeatureAnalytics.register({
-    trackingId: 'UA-XXXXXXXX-Y', 
+    trackingId: 'UA-XXXXXXXX-Y',
     verbose: true,
 });
 ```
@@ -41,7 +41,7 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
     "isWebGLSupported": true,
     "isWebRTCSupported": true,
     "isWebSocketSupported": true,
-    "isWebVRSupported": false,
+    "isWebVRSupportedAndActive": false,
     "isWebWorkerSupported": true,
     "webGL2Features": {
       "renderer": "WebKit WebGL",

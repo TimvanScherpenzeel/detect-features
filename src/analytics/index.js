@@ -44,6 +44,7 @@ const createEventObject = (options = {}) => {
 					});
 				}
 			});
+
 			break;
 		case 'boolean':
 		case 'number':
@@ -60,6 +61,7 @@ const createEventObject = (options = {}) => {
 				eventAction: `${this.feature}`,
 				eventValue: `${this.value}`,
 			});
+
 			break;
 		case 'string':
 			if (this.log) {
@@ -75,6 +77,7 @@ const createEventObject = (options = {}) => {
 				eventAction: `${this.feature}`,
 				eventLabel: `${this.value}`,
 			});
+
 			break;
 		default:
 			if (this.log) {

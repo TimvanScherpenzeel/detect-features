@@ -1,7 +1,7 @@
-import isWebVRSupported from './../browserFeatures/isWebVRSupported';
+import isWebVRSupportedAndActive from './../browserFeatures/isWebVRSupportedAndActive';
 
 export default (() => {
-	if (isWebVRSupported) {
+	if (isWebVRSupportedAndActive) {
 		navigator.getVRDisplays()
 			.then((displays) => {
 				if (displays.length > 0) {
