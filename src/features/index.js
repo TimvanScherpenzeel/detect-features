@@ -22,7 +22,6 @@ import getDevicePixelRatio from './hardwareFeatures/getDevicePixelRatio';
 import getEndianness from './hardwareFeatures/getEndianness';
 import getWebWorkerPoolSize from './hardwareFeatures/getWebWorkerPoolSize';
 
-
 // Features
 export const getFeatures = (verbose = false) => {
 	// Default features

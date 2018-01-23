@@ -4,10 +4,10 @@ Reports hardware features and browser support of features to Google Analytics.
 
 ## Usage
 ```javascript
-FeatureAnalytics.register({
-    trackingId: 'UA-XXXXXXXX-Y',
-    verbose: true,
-});
+  FeatureAnalytics.register({
+      trackingId: 'UA-XXXXXXXX-Y',
+      verbose: true,
+  });
 ```
 
 ## Installation
