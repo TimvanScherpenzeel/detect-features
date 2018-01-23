@@ -80,7 +80,7 @@ const createEventObject = (options = {}) => {
 
 			break;
 		default:
-			if (this.log) {
+			if (this.log && this.value !== undefined) {
 				console.warn(`Value of type: ${this.value} could not be recognized`);
 			}
 

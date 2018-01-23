@@ -21,7 +21,6 @@ import isDoNotTrackEnabled from './browserSettings/isDoNotTrackEnabled';
 import getDevicePixelRatio from './hardwareFeatures/getDevicePixelRatio';
 import getEndianness from './hardwareFeatures/getEndianness';
 import getWebWorkerPoolSize from './hardwareFeatures/getWebWorkerPoolSize';
-import getWebVRDeviceType from './hardwareFeatures/getWebVRDeviceType';
 
 
 // Features
@@ -55,17 +54,6 @@ export const getFeatures = (verbose = false) => {
 			workerPoolSize: getWebWorkerPoolSize,
 		},
 	};
-
-	// WebVR features
-	if (isWebVRSupported) {
-		features.hardwareFeatures = {
-			...features.hardwareFeatures,
-			...{
-				// Hardware features
-				webVRDeviceType: getWebVRDeviceType,
-			},
-		};
-	}
 
 	// Verbose features
 	if (verbose) {
