@@ -10,13 +10,42 @@ const createEventObject = (options = {}) => {
 	switch (typeof this.value) {
 		case 'object':
 			Object.keys(this.value).forEach((value) => {
-				console.log(value, this.value[value]);
-				console.log(`${this.category} - ${this.feature}`);
+				if (typeof this.value[value] !== 'string' && this.value[value] !== undefined) {
+					Object.keys(this.value[value]).map((key) => {
+						console.log({
+							eventCategory: `${this.category}`,
+							eventAction: `${value}`,
+							eventValue: `${key}`,
+						});
+						record({
+							eventCategory: `${this.category}`,
+							eventAction: `${value}`,
+							eventValue: `${key}`,
+						});
+					});
+				}
+
+				if (typeof this.value[value] === 'string') {
+					console.log({
+						eventCategory: `${this.category}`,
+						eventAction: `${value}`,
+						eventValue: `${this.value[value]}`,
+					});
+					record({
+						eventCategory: `${this.category}`,
+						eventAction: `${value}`,
+						eventValue: `${this.value[value]}`,
+					});
+				}
 			});
 			break;
 		case 'boolean':
 		case 'number':
-			// console.log(this.category, this.feature, this.value);
+			console.log({
+				eventCategory: `${this.category}`,
+				eventAction: `${this.feature}`,
+				eventValue: `${this.value}`,
+			});
 			record({
 				eventCategory: `${this.category}`,
 				eventAction: `${this.feature}`,
@@ -24,7 +53,11 @@ const createEventObject = (options = {}) => {
 			});
 			break;
 		case 'string':
-			// console.log(this.category, this.feature, this.value);
+			console.log({
+				eventCategory: `${this.category}`,
+				eventAction: `${this.feature}`,
+				eventLabel: `${this.value}`,
+			});
 			record({
 				eventCategory: `${this.category}`,
 				eventAction: `${this.feature}`,
