@@ -1,14 +1,13 @@
 export const record = (options = {}) => {
 	const defaults = {
-		hitType: 'event',
 		nonInteraction: true,
 	};
 
-	const eventObject = { ...defaults, ...options };
+	const eventObject = { ...options, ...defaults };
 
 	if (window.GA_FEATURE_ANALYTICS !== undefined && typeof window.GA_FEATURE_ANALYTICS === 'function') {
 		const callback = () => {
-			window.GA_FEATURE_ANALYTICS('send', eventObject);
+			window.GA_FEATURE_ANALYTICS('send', 'event', eventObject);
 		};
 
 		if ('requestIdleCallback' in window) {

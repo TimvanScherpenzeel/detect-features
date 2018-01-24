@@ -16,14 +16,14 @@ const createEventObject = (options = {}) => {
 							console.log({
 								eventCategory: `${this.category}`,
 								eventAction: `${value}`,
-								eventValue: `${key}`,
+								eventLabel: `${key}`,
 							});
 						}
 
 						record({
 							eventCategory: `${this.category}`,
 							eventAction: `${value}`,
-							eventValue: `${key}`,
+							eventLabel: `${key}`,
 						});
 					});
 				}
@@ -33,14 +33,14 @@ const createEventObject = (options = {}) => {
 						console.log({
 							eventCategory: `${this.category}`,
 							eventAction: `${value}`,
-							eventValue: `${this.value[value]}`,
+							eventLabel: `${this.value[value]}`,
 						});
 					}
 
 					record({
 						eventCategory: `${this.category}`,
 						eventAction: `${value}`,
-						eventValue: `${this.value[value]}`,
+						eventLabel: `${this.value[value]}`,
 					});
 				}
 			});
@@ -52,14 +52,14 @@ const createEventObject = (options = {}) => {
 				console.log({
 					eventCategory: `${this.category}`,
 					eventAction: `${this.feature}`,
-					eventValue: `${this.value}`,
+					eventLabel: `${this.value}`,
 				});
 			}
 
 			record({
 				eventCategory: `${this.category}`,
 				eventAction: `${this.feature}`,
-				eventValue: `${this.value}`,
+				eventLabel: `${this.value}`,
 			});
 
 			break;
