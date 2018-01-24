@@ -3,7 +3,7 @@ export default (() => {
 	const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
 	/* eslint-disable no-undef */
-	if (!gl || !gl instanceof WebGLRenderingContext) return false;
+	if (!gl || !(gl instanceof WebGLRenderingContext)) return false;
 	/* eslint-enable no-undef */
 
 	const glExtensionDebugRendererInfo = gl.getExtension('WEBGL_debug_renderer_info');
@@ -77,8 +77,6 @@ export default (() => {
 			gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.LOW_FLOAT).precision,
 		].toString(),
 	};
-
-	console.log(features);
 
 	return features;
 })();
