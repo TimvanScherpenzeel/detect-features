@@ -1,5 +1,5 @@
-// Analytics
-import { analytics } from './analytics';
+// Features
+import { getFeatures } from './features';
 
 export function register(options = {}) {
 	this.verbose = false;
@@ -8,5 +8,13 @@ export function register(options = {}) {
 
 	Object.assign(this, options);
 
-	analytics.register(this.verbose, this.log, this.element);
+	const features = getFeatures(this.verbose);
+
+	if (this.log) {
+		console.log(features);
+	}
+
+	if (this.element) {
+		this.element.appendChild(document.createTextNode(JSON.stringify(features, null, 2)));
+	}
 }
