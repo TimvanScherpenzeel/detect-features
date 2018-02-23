@@ -10,7 +10,7 @@ export const analytics = {
 		}
 
 		if (element) {
-			element.append(JSON.stringify(features, null, 2));
+			element.appendChild(document.createTextNode(JSON.stringify(features, null, 2)));
 		}
 	},
 };
