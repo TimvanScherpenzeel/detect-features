@@ -11,12 +11,10 @@
 
         <script src="../dist/feature-analytics.js"></script>
         <script>
-                const app = document.getElementById('app');
-
                 FeatureAnalytics.register({
                     verbose: true,
                     log: true,
-                    element: app,
+                    element: document.getElementById('app'),
                 });
             </script>
     </body>
