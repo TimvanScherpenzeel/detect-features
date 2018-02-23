@@ -14,8 +14,8 @@ const config = {
 	entry: './index.js',
 	output: {
 		path: distPath,
-		filename: !isDevelopment ? 'feature-analytics.min.js' : 'feature-analytics.js',
-		library: 'FeatureAnalytics',
+		filename: !isDevelopment ? 'feature-detector.min.js' : 'feature-detector.js',
+		library: 'FeatureDetector',
 		libraryTarget: 'umd',
 		umdNamedDefine: true,
 	},

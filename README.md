@@ -1,4 +1,4 @@
-# Feature analytics
+# Feature detector
 
 Reports hardware features and browser support of features.
 
@@ -6,9 +6,10 @@ Useful for making decisions based on data instead of gut feelings.
 
 ## Usage
 ```javascript
-  FeatureAnalytics.register({
+  FeatureDetector.register({
       verbose: true,
       log: true,
+      element: document.getElementById('app'),
   });
 ```
 
