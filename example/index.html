@@ -5,16 +5,19 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <title>Feature Analytics</title>
-        <script src="../dist/feature-analytics.js"></script>
-        <script>
-            FeatureAnalytics.register({
-                verbose: true,
-                log: true,
-            });
-        </script>
     </head>
     <body>
-        Open the developer console
-        <div id="app"></div>
+        <pre id="app"></pre>
+
+        <script src="../dist/feature-analytics.js"></script>
+        <script>
+                const app = document.getElementById('app');
+
+                FeatureAnalytics.register({
+                    verbose: true,
+                    log: true,
+                    element: app,
+                });
+            </script>
     </body>
 </html>

@@ -2,9 +2,15 @@
 import { getFeatures } from '../features';
 
 export const analytics = {
-	register: (verbose = false, log = false) => {
+	register: (verbose = false, log = false, element = null) => {
 		const features = getFeatures(verbose);
 
-		if (log) console.log(features);
+		if (log) {
+			console.log(features);
+		}
+
+		if (element) {
+			element.append(JSON.stringify(features, null, 2));
+		}
 	},
 };
