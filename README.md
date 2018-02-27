@@ -93,7 +93,11 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
           "vertexShaderMediumPrecision": "127,127,23"
         },
         "redBits": 8,
-        "stencilBits": 0,
+        "stencilBits": 8,
+        "subPixelBits": 8
+      },
+      "extensions": {
+        "maxAnisotropy": 16,
         "supportedExtensions": {
           "EXT_color_buffer_float": true,
           "EXT_disjoint_timer_query_webgl2": true,
@@ -107,30 +111,33 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
         }
       },
       "specific": {
-        "maxArrayTextureLayers": 2048,
         "max3DTextureSize": 2048,
+        "maxArrayTextureLayers": 2048,
+        "maxClientWaitTimeout": 0,
         "maxColorAttachments": 8,
         "maxCombinedFragmentUniformComponents": 249856,
         "maxCombinedVertexUniformComponents": 249856,
         "maxCombinedUniformBlocks": 75,
         "maxDrawBuffers": 8,
         "maxElementIndex": 4294967295,
+        "maxElementsIndices": 150000,
+        "maxElementsVertices": 1048575,
         "maxFragmentInputComponents": 128,
         "maxFragmentUniformBlocks": 15,
         "maxFragmentUniformComponents": 4096,
         "maxProgramTexelOffset": 7,
         "maxSamples": 16,
         "maxServerWaitTimeout": 0,
-        "maxTextureLodBias": 16,
+        "maxTextureLODBias": 16,
         "maxTransformFeedbackInterleavedComponents": 64,
         "maxTransformFeedbackSeparateAttribs": 4,
         "maxTransformFeedbackSeparateComponents": 4,
+        "maxUniformBlockSize": 65536,
+        "maxUniformBufferBindings": 75,
         "maxVaryingComponents": 60,
         "maxVertexUniformBlocks": 15,
         "maxVertexOutputComponents": 128,
         "maxVertexUniformComponents": 4096,
-        "maxUniformBufferBindings": 75,
-        "maxUniformBlockSize": 65536,
         "minProgramTexelOffset": -8,
         "uniformBufferOffsetAlignment": 256
       }
@@ -172,7 +179,12 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
           "vertexShaderMediumPrecision": "127,127,23"
         },
         "redBits": 8,
-        "stencilBits": 0,
+        "stencilBits": 8,
+        "subPixelBits": 8
+      },
+      "extensions": {
+        "maxAnisotropy": 16,
+        "maxDrawBuffers": 8,
         "supportedExtensions": {
           "ANGLE_instanced_arrays": true,
           "EXT_blend_minmax": true,
