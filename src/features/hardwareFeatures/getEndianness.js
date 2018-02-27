@@ -7,6 +7,6 @@ export default (() => {
 
 		return (byteView[0] === 1) ? 'little' : 'big';
 	} else {
-		return 'unknown';
+		return 'Unknown';
 	}
 })();
