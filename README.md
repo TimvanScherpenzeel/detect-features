@@ -4,6 +4,10 @@ Reports hardware features and browser support of features.
 
 Useful for making decisions based on data instead of gut feelings.
 
+## Demo
+
+[Live demo](https://timvanscherpenzeel.github.io/feature-detector/)
+
 ## Usage
 ```javascript
   FeatureDetector.register({
