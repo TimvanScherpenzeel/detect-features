@@ -1,7 +1,7 @@
 {
   "name": "detect-features",
   "version": "0.0.2",
-  "description": "",
+  "description": "Detect and report browser and hardware features.",
   "main": "dist/detect-features.js",
   "scripts": {
     "start": "NODE_ENV=development webpack -d --progress --watch --display-modules",

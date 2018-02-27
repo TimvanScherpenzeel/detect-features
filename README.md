@@ -1,6 +1,6 @@
 # Detect features
 
-Reports hardware features and browser support of features.
+Detect and report browser and hardware features.
 
 ## Demo
 
