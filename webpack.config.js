@@ -31,7 +31,17 @@ const config = {
 						'transform-object-assign',
 					],
 					presets: [
-						['es2015', { modules: false }],
+						['env', {
+							modules: false,
+							useBuiltIns: true,
+							targets: {
+								browsers: [
+									'> 5%',
+									'last 2 versions',
+									'not ie < 11',
+								],
+							},
+						}],
 					],
 				},
 			},
