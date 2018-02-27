@@ -32,6 +32,8 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
   npm run lint
 
   npm run dist
+
+  npm run deploy
 ```
 
 ## Reported features
