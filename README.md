@@ -27,6 +27,8 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 ```sh
   npm start
 
+  npm run serve
+
   npm run lint
 
   npm run dist
