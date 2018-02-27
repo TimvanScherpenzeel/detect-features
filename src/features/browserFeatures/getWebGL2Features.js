@@ -92,6 +92,7 @@ export default (() => {
 
 		},
 
+		// Extensions
 		extensions: {
 			maxAnisotropy: (glAnisotropicExtension) ? gl.getParameter(glAnisotropicExtension.MAX_TEXTURE_MAX_ANISOTROPY_EXT) : 0,
 			supportedExtensions: gl.getSupportedExtensions().reduce((obj, key) => ({ ...obj, [key]: true }), {}),

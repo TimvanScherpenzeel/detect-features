@@ -93,6 +93,7 @@ export default (() => {
 
 		},
 
+		// Extensions
 		extensions: {
 			maxAnisotropy: (glAnisotropicExtension) ? gl.getParameter(glAnisotropicExtension.MAX_TEXTURE_MAX_ANISOTROPY_EXT) : 0,
 			maxDrawBuffers: (glDrawBufferExtension) ? gl.getParameter(glDrawBufferExtension.MAX_DRAW_BUFFERS_WEBGL) : 0,
