@@ -1,12 +1,19 @@
 export default (() => {
+	const attributes = {
+		stencil: true,
+	};
+
 	const canvas = document.createElement('canvas');
-	const gl = canvas.getContext('webgl2');
+	const gl = canvas.getContext('webgl2', attributes);
 
 	/* eslint-disable no-undef */
 	if (!gl || !(gl instanceof WebGL2RenderingContext)) return false;
 	/* eslint-enable no-undef */
 
 	const glExtensionDebugRendererInfo = gl.getExtension('WEBGL_debug_renderer_info');
+
+	// Enable features
+	gl.enable(gl.STENCIL_TEST);
 
 	const features = {
 		// Base
@@ -78,35 +85,39 @@ export default (() => {
 			},
 			redBits: gl.getParameter(gl.RED_BITS),
 			stencilBits: gl.getParameter(gl.STENCIL_BITS),
+			subPixelBits: gl.getParameter(gl.SUBPIXEL_BITS),
 			supportedExtensions: gl.getSupportedExtensions().reduce((obj, key) => ({ ...obj, [key]: true }), {}),
 		},
 
 		// WebGL2 specific
 		specific: {
-			maxArrayTextureLayers: gl.getParameter(gl.MAX_ARRAY_TEXTURE_LAYERS),
 			max3DTextureSize: gl.getParameter(gl.MAX_3D_TEXTURE_SIZE),
+			maxArrayTextureLayers: gl.getParameter(gl.MAX_ARRAY_TEXTURE_LAYERS),
+			maxClientWaitTimeout: gl.getParameter(gl.MAX_CLIENT_WAIT_TIMEOUT_WEBGL),
 			maxColorAttachments: gl.getParameter(gl.MAX_COLOR_ATTACHMENTS),
 			maxCombinedFragmentUniformComponents: gl.getParameter(gl.MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS),
 			maxCombinedVertexUniformComponents: gl.getParameter(gl.MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS),
 			maxCombinedUniformBlocks: gl.getParameter(gl.MAX_COMBINED_UNIFORM_BLOCKS),
 			maxDrawBuffers: gl.getParameter(gl.MAX_DRAW_BUFFERS),
 			maxElementIndex: gl.getParameter(gl.MAX_ELEMENT_INDEX),
+			maxElementsIndices: gl.getParameter(gl.MAX_ELEMENT_INDICES),
+			maxElementsVertices: gl.getParameter(gl.MAX_ELEMENT_VERTICES),
 			maxFragmentInputComponents: gl.getParameter(gl.MAX_FRAGMENT_INPUT_COMPONENTS),
 			maxFragmentUniformBlocks: gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_BLOCKS),
 			maxFragmentUniformComponents: gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_COMPONENTS),
 			maxProgramTexelOffset: gl.getParameter(gl.MAX_PROGRAM_TEXEL_OFFSET),
 			maxSamples: gl.getParameter(gl.MAX_SAMPLES),
 			maxServerWaitTimeout: gl.getParameter(gl.MAX_SERVER_WAIT_TIMEOUT),
-			maxTextureLodBias: gl.getParameter(gl.MAX_TEXTURE_LOD_BIAS),
+			maxTextureLODBias: gl.getParameter(gl.MAX_TEXTURE_LOD_BIAS),
 			maxTransformFeedbackInterleavedComponents: gl.getParameter(gl.MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS),
 			maxTransformFeedbackSeparateAttribs: gl.getParameter(gl.MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS),
 			maxTransformFeedbackSeparateComponents: gl.getParameter(gl.MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS),
+			maxUniformBlockSize: gl.getParameter(gl.MAX_UNIFORM_BLOCK_SIZE),
+			maxUniformBufferBindings: gl.getParameter(gl.MAX_UNIFORM_BUFFER_BINDINGS),
 			maxVaryingComponents: gl.getParameter(gl.MAX_VARYING_COMPONENTS),
 			maxVertexUniformBlocks: gl.getParameter(gl.MAX_VERTEX_UNIFORM_BLOCKS),
 			maxVertexOutputComponents: gl.getParameter(gl.MAX_VERTEX_OUTPUT_COMPONENTS),
 			maxVertexUniformComponents: gl.getParameter(gl.MAX_VERTEX_UNIFORM_COMPONENTS),
-			maxUniformBufferBindings: gl.getParameter(gl.MAX_UNIFORM_BUFFER_BINDINGS),
-			maxUniformBlockSize: gl.getParameter(gl.MAX_UNIFORM_BLOCK_SIZE),
 			minProgramTexelOffset: gl.getParameter(gl.MIN_PROGRAM_TEXEL_OFFSET),
 			uniformBufferOffsetAlignment: gl.getParameter(gl.UNIFORM_BUFFER_OFFSET_ALIGNMENT),
 		},

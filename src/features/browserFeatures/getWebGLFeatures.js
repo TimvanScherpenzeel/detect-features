@@ -1,12 +1,19 @@
 export default (() => {
+	const attributes = {
+		stencil: true,
+	};
+
 	const canvas = document.createElement('canvas');
-	const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+	const gl = canvas.getContext('webgl', attributes) || canvas.getContext('experimental-webgl', attributes);
 
 	/* eslint-disable no-undef */
 	if (!gl || !(gl instanceof WebGLRenderingContext)) return false;
 	/* eslint-enable no-undef */
 
 	const glExtensionDebugRendererInfo = gl.getExtension('WEBGL_debug_renderer_info');
+
+	// Enable features
+	gl.enable(gl.STENCIL_TEST);
 
 	const features = {
 		// Base
@@ -78,6 +85,7 @@ export default (() => {
 			},
 			redBits: gl.getParameter(gl.RED_BITS),
 			stencilBits: gl.getParameter(gl.STENCIL_BITS),
+			subPixelBits: gl.getParameter(gl.SUBPIXEL_BITS),
 			supportedExtensions: gl.getSupportedExtensions().reduce((obj, key) => ({ ...obj, [key]: true }), {}),
 		},
 	};
