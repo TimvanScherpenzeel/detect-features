@@ -1,14 +1,14 @@
-# Feature detector
+# Detect features
 
 Reports hardware features and browser support of features.
 
 ## Demo
 
-[Live demo](https://timvanscherpenzeel.github.io/feature-detector/)
+[Live demo](https://timvanscherpenzeel.github.io/detect-features/)
 
 ## Usage
 ```javascript
-  FeatureDetector.register({
+  DetectFeatures.register({
       log: true,
       element: document.getElementById('app'),
   });
@@ -235,4 +235,4 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 
 ## Licence
 
-My work is released under the [MIT license](https://raw.githubusercontent.com/TimvanScherpenzeel/feature-detector/master/LICENSE).
+My work is released under the [MIT license](https://raw.githubusercontent.com/TimvanScherpenzeel/detect-features/master/LICENSE).

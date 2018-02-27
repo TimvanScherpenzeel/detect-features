@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("FeatureDetector", [], factory);
+		define("DetectFeatures", [], factory);
 	else if(typeof exports === 'object')
-		exports["FeatureDetector"] = factory();
+		exports["DetectFeatures"] = factory();
 	else
-		root["FeatureDetector"] = factory();
+		root["DetectFeatures"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache

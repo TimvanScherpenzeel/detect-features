@@ -1,8 +1,8 @@
 {
-  "name": "feature-detector",
+  "name": "detect-features",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/feature-detector.js",
+  "main": "dist/detect-features.js",
   "scripts": {
     "start": "NODE_ENV=development webpack -d --progress --watch --display-modules",
     "serve": "http-server --cors -s -o",
