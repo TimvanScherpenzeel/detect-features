@@ -15,6 +15,9 @@ export default (() => {
 	// Enable features
 	gl.enable(gl.STENCIL_TEST);
 
+	// Enable extensions
+	const glAnisotropicExtension = gl.getExtension('EXT_texture_filter_anisotropic') || gl.getExtension('WEBKIT_EXT_texture_filter_anisotropic') || gl.getExtension('MOZ_EXT_texture_filter_anisotropic');
+
 	const features = {
 		// Base
 		base: {
@@ -86,6 +89,11 @@ export default (() => {
 			redBits: gl.getParameter(gl.RED_BITS),
 			stencilBits: gl.getParameter(gl.STENCIL_BITS),
 			subPixelBits: gl.getParameter(gl.SUBPIXEL_BITS),
+
+		},
+
+		extensions: {
+			maxAnisotropy: (glAnisotropicExtension) ? gl.getParameter(glAnisotropicExtension.MAX_TEXTURE_MAX_ANISOTROPY_EXT) : 0,
 			supportedExtensions: gl.getSupportedExtensions().reduce((obj, key) => ({ ...obj, [key]: true }), {}),
 		},
 
