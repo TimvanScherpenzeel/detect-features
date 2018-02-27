@@ -2,13 +2,12 @@
 import { getFeatures } from './features';
 
 export function register(options = {}) {
-	this.verbose = false;
 	this.log = false;
 	this.element = null;
 
 	Object.assign(this, options);
 
-	const features = getFeatures(this.verbose);
+	const features = getFeatures();
 
 	if (this.log) {
 		console.log(features);

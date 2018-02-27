@@ -24,7 +24,7 @@ import getEndianness from './hardwareFeatures/getEndianness';
 import getWebWorkerPoolSize from './hardwareFeatures/getWebWorkerPoolSize';
 
 // Features
-export const getFeatures = (verbose = false) => {
+export const getFeatures = () => {
 	// Default features
 	const features = {
 		// Browser features
@@ -41,6 +41,8 @@ export const getFeatures = (verbose = false) => {
 			isWebSocketSupported,
 			isWebVRSupported,
 			isWebWorkerSupported,
+			webGL2Features: getWebGL2Features,
+			webGLFeatures: getWebGLFeatures,
 		},
 
 		// Browser settings
@@ -52,29 +54,10 @@ export const getFeatures = (verbose = false) => {
 		// Hardware features
 		hardwareFeatures: {
 			devicePixelRatio: getDevicePixelRatio,
+			endianness: getEndianness,
 			workerPoolSize: getWebWorkerPoolSize,
 		},
 	};
-
-	// Verbose features
-	if (verbose) {
-		features.browserFeatures = {
-			...features.browserFeatures,
-			...{
-				// Browser features
-				webGL2Features: getWebGL2Features,
-				webGLFeatures: getWebGLFeatures,
-			},
-		};
-
-		features.hardwareFeatures = {
-			...features.hardwareFeatures,
-			...{
-				// Hardware features
-				endianness: getEndianness,
-			},
-		};
-	}
 
 	return features;
 };

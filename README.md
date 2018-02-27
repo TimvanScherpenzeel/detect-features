@@ -7,7 +7,6 @@ Useful for making decisions based on data instead of gut feelings.
 ## Usage
 ```javascript
   FeatureDetector.register({
-      verbose: true,
       log: true,
       element: document.getElementById('app'),
   });
@@ -31,7 +30,7 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
   npm run dist
 ```
 
-## Reported features (verbose mode)
+## Reported features
 ```json
 {
   "browserFeatures": {
