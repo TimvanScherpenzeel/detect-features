@@ -1,5 +1,10 @@
 # Detect features
 
+![](http://img.badgesize.io/TimvanScherpenzeel/detect-features/master/dist/detect-features.min.js.svg?compression=gzip&maxAge=60)
+[![npm version](https://badge.fury.io/js/detect-features.svg)](https://badge.fury.io/js/detect-features)
+[![dependencies](https://david-dm.org/timvanscherpenzeel/detect-features.svg)](https://david-dm.org/timvanscherpenzeel/detect-features)
+[![devDependencies](https://david-dm.org/timvanscherpenzeel/detect-features/dev-status.svg)](https://david-dm.org/timvanscherpenzeel/detect-features#info=devDependencies)
+
 Detect and report browser and hardware features.
 
 ## Demo
