@@ -230,3 +230,7 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
   }
 }
 ```
+
+## Licence
+
+My work is released under the [MIT license](https://raw.githubusercontent.com/TimvanScherpenzeel/feature-detector/master/LICENSE).
