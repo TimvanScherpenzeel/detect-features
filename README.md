@@ -67,6 +67,7 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
     "isWebSocketSupported": true,
     "isWebVRSupported": false,
     "isWebWorkerSupported": true,
+    "isWebXRSupported": false,
     "webGL2Features": {
       "base": {
         "shaderVersion": "WebGL GLSL ES 3.00 (OpenGL ES GLSL ES 3.0 Chromium)",

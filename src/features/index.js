@@ -13,6 +13,7 @@ import isWebRTCSupported from './browserFeatures/isWebRTCSupported';
 import isWebSocketSupported from './browserFeatures/isWebSocketSupported';
 import isWebVRSupported from './browserFeatures/isWebVRSupported';
 import isWebWorkerSupported from './browserFeatures/isWebWorkerSupported';
+import isWebXRSupported from './browserFeatures/isWebXRSupported';
 
 // Browser settings
 import isCookieEnabled from './browserSettings/isCookieEnabled';
@@ -41,6 +42,7 @@ export const getFeatures = () => {
 			isWebSocketSupported,
 			isWebVRSupported,
 			isWebWorkerSupported,
+			isWebXRSupported,
 			webGL2Features: getWebGL2Features,
 			webGLFeatures: getWebGLFeatures,
 		},
