@@ -1,6 +1,5 @@
 # Detect features
 
-[![Build Status](https://travis-ci.com/TimvanScherpenzeel/detect-features.svg?branch=master)](https://travis-ci.com/TimvanScherpenzeel/detect-features)
 [![npm version](https://badge.fury.io/js/detect-features.svg)](https://badge.fury.io/js/detect-features)
 [![gzip size](https://img.badgesize.io/https:/unpkg.com/detect-features/dist/detect-features.esm.js?compression=gzip)](https://unpkg.com/detect-features)
 [![install size](https://packagephobia.now.sh/badge?p=detect-features)](https://packagephobia.now.sh/result?p=detect-features)
