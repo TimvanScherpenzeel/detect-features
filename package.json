@@ -30,9 +30,7 @@
     "test:coverage": "jest --coverage",
     "prebuild": "rimraf dist",
     "build": "rollup -c rollup/config.lib.js",
-    "example": "rollup -w -c rollup/config.dev.ts",
-    "parse-analytics": "node ./scripts/analytics_parser.js",
-    "update-benchmarks": "rimraf benchmarks && mkdir -p benchmarks && ts-node -O '{\"module\":\"commonjs\"}' ./scripts/update_benchmarks.ts && tar -czvf benchmarks.tar.gz benchmarks/*.json"
+    "example": "rollup -w -c rollup/config.dev.ts"
   },
   "dependencies": {
     "detect-gpu": "^2.0.3",

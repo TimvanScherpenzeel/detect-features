@@ -1,6 +1,5 @@
 // Vendor
 import { ModuleFormat, RollupOptions } from 'rollup';
-import copy from 'rollup-plugin-copy';
 import commonjs from 'rollup-plugin-commonjs';
 import json from '@rollup/plugin-json';
 import filesize from 'rollup-plugin-filesize';
@@ -40,9 +39,6 @@ export default formats.map(
       ),
       resolve(),
       commonjs(),
-      copy({
-        targets: [{ dest: 'dist', src: 'benchmarks' }],
-      }),
       json(),
       sourcemaps(),
     ],

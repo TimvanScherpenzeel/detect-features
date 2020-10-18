@@ -1,6 +1,5 @@
 // Vendor
 import commonjs from 'rollup-plugin-commonjs';
-import copy from 'rollup-plugin-copy';
 import json from '@rollup/plugin-json';
 import livereload from 'rollup-plugin-livereload';
 import resolve from '@rollup/plugin-node-resolve';
@@ -32,9 +31,6 @@ export default {
       open: true,
       openPage: '/',
       port: 3003,
-    }),
-    copy({
-      targets: [{ dest: 'example/build', src: 'benchmarks' }],
     }),
     json(),
     sourcemaps(),
