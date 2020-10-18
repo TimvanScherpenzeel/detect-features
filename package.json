@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "dist/detect-features.umd.js",
   "module": "dist/detect-features.esm.js",
-  "types": "dist/src/index.d.ts",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/TimvanScherpenzeel/detect-features#readme",
   "bugs": {
     "url": "https://github.com/TimvanScherpenzeel/detect-features/issues"
