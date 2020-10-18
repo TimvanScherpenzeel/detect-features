@@ -19,6 +19,15 @@
     "dist"
   ],
   "keywords": [
+    "gpu",
+    "detect",
+    "webgl",
+    "webgl2",
+    "three.js",
+    "babylonjs",
+    "three",
+    "babylon",
+    "3d",
     "typescript",
     "javascript"
   ],
@@ -54,24 +63,5 @@
     "rollup-plugin-typescript2": "^0.27.3",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
-  },
-  "jest": {
-    "testURL": "http://localhost",
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.json"
-      }
-    },
-    "testMatch": [
-      "**/test/**/*.test.ts"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/test/data.ts"
-    ],
-    "preset": "ts-jest"
   }
 }
