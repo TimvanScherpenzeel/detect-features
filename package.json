@@ -35,6 +35,8 @@
     "update-benchmarks": "rimraf benchmarks && mkdir -p benchmarks && ts-node -O '{\"module\":\"commonjs\"}' ./scripts/update_benchmarks.ts && tar -czvf benchmarks.tar.gz benchmarks/*.json"
   },
   "dependencies": {
+    "detect-gpu": "^2.0.3",
+    "detect-ua": "^1.0.2",
     "webgl-constants": "^1.1.1"
   },
   "devDependencies": {

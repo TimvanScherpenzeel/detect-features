@@ -1,10 +1,8 @@
 // Application
-import { getGPUTier } from '../src';
+import { getFeatures } from '../src';
 
 (async () => {
-  const data = await getGPUTier({
-    benchmarksURL: '/build/benchmarks',
-  });
+  const data = await getFeatures();
 
   document.body.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
 })();

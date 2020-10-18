@@ -1714,10 +1714,22 @@ depd@^1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
 
+detect-gpu@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/detect-gpu/-/detect-gpu-2.0.3.tgz#cb7c8c561c2f2e02d3b3d2873c12c7dbf1e7d147"
+  integrity sha512-DbRjVL5Yi5FAd/uyIc3DYbFHSTEotX68bdXRanPjgIMm9HmyOH/u76sAJs+KZcOoFMc3svOXXLxHOzH/b8PRgA==
+  dependencies:
+    webgl-constants "^1.1.1"
+
 detect-newline@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-3.1.0.tgz#576f5dfc63ae1a192ff192d8ad3af6308991b651"
   integrity sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==
+
+detect-ua@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/detect-ua/-/detect-ua-1.0.2.tgz#4958d12a6af62adf522a26f0d9dec764ab3938c0"
+  integrity sha512-EsqFycxcggrkzRm3IaHr1nP1pSCDVLHW3haUvaSqws70B277a1SKk5hFtuJo3BKuPwTTRGTGsYYiJwS/97ptEg==
 
 devtools-protocol@0.0.799653:
   version "0.0.799653"
